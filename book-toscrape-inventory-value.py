@@ -17,8 +17,7 @@ for page_num in range(1, 50 + 1):
 
     for price in prices:
         price = price.text.strip()
-        price = price.replace("£", "")
-        price = price.replace("Â", "")
+        price = price.replace("Â£", "")
         book_title_price.append(price)
 
 book_title_price = [float(f) for f in book_title_price]
