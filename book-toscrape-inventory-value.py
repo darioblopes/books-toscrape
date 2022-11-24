@@ -1,5 +1,4 @@
 # Find the inventory value of all the books on http://books.toscrape.com
-
 import requests
 import bs4
 
@@ -7,12 +6,6 @@ base_url = "http://books.toscrape.com/catalogue/page-{}.html"
 res = requests.get(base_url.format(1))
 soup = bs4.BeautifulSoup(res.text, "lxml")
 product = soup.select(".product_pod")
-example = product[1]
-example_price = example.select(".price_color")
-
-# How to get just the price
-# for tags in example_price:
-# print(tags.text.strip())
 
 book_title_price = []
 for page_num in range(1, 50 + 1):
